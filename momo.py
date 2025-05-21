@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def run_momo():
     try:
-        exec(open("momo_core.py").read())
+        exec(open("momo_core.py").read(), globals())
         return "✅ momo.py running"
     except Exception as e:
         return f"❌ Error: {str(e)}"
